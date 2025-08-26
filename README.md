@@ -15,14 +15,14 @@ An end-to-end 3D reconstruction benchmark to identify the most effective combina
 
 This project introduces a **comprehensive benchmark** to evaluate and select the most effective combination of **feature extractors and feature matchers** in hierarchical localization pipelines.
 The evaluation is based on the following key metrics:  
-1. **Keypoint Extraction**  
-   - Measuring the number of keypoints detected by each feature extractor.  
+- ### Keypoint Extraction  
+Measuring the number of keypoints detected by each feature extractor.  
 
-2. **Inlier Matches & Point Cloud Density**  
-   - Assessing the number of inlier matches produced by different feature matchers (with a unified feature extractor). This is crucial since it affects the density of the point cloud generated after the triangulation stage occurs.
+- ### Inlier Matches & Point Cloud Density  
+Assessing the number of inlier matches produced by different feature matchers (with a unified feature extractor). This is crucial since it affects the density of the point cloud generated after the triangulation stage occurs.
 
-3. **Pose Accuracy**  
-   - Comparing the estimated camera extrinsic parameters (*rotation* and *translation*) with the ground truth for specific viewpoints.  
-   - Quantifying spatial and localization accuracy across each extractor–matcher combination.  
+- ### Pose Accuracy
+Comparing the estimated camera extrinsic parameters (*rotation* and *translation*) with the ground truth for specific viewpoints.  
+Quantifying spatial and localization accuracy across each extractor–matcher combination.  
 
 This methodology provides a **consistent and reliable framework for benchmarking**, ensuring a fair comparison of different approaches and guiding the selection of the **optimal pipeline configuration**. Ultimately, this leads to generating a **well-representative rendered mesh** through the **multi-view stereo (MVS) reconstruction process**.  
