@@ -37,7 +37,7 @@ assert cv2.__version__ > "4.5", "OpenCV >= 4.5 is required"
 # IDs of the two images under comparison
 query_id = 10      # Query image ID
 db_id = 19         # Database image ID
-
+EM_type='sift' #the type of Feature Extractor-Matcher {sl: SuperPoint+LightGlue, sift: Sift+NN_ratio, ss:SuperPoint+SuperGlue, disk: Disk+LightGlue}
 
 # Load intrinsics (K) and extrinsics (R, T) for query & database images
 K_query, R_query, T_query = gt_params(query_id)
@@ -202,8 +202,8 @@ def translation_angle_error(T_est, T_gt):
 if __name__ == "__main__":
 
     # Load matched keypoints between query and db images
-    kp_query = load_keypoints(f"kp_q_{query_id}_{db_id}_sl.txt")
-    kp_db = load_keypoints(f"kp_db_{db_id}_{query_id}_sl.txt")
+    kp_query = load_keypoints(f"kp_q_{query_id}_{db_id}_{EM_type}.txt")
+    kp_db = load_keypoints(f"kp_db_{db_id}_{query_id}_{EM_type}.txt")
 
     # Estimate Fundamental matrix using RANSAC
     F, mask = cv2.findFundamentalMat(
