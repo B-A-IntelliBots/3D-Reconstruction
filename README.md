@@ -19,14 +19,11 @@ An end-to-end 3D reconstruction benchmark to identify the most effective combina
 
 This project introduces a **comprehensive benchmark** to evaluate and select the most effective combination of **feature extractors and feature matchers** in hierarchical localization pipelines.
 The evaluation is based on the following key metrics:  
-- ### Keypoint Extraction  
-Measuring the number of keypoints detected by each feature extractor.  
+- **Keypoint Extraction**: Measuring the number of keypoints detected by each feature extractor.  
 
-- ### Inlier Matches & Point Cloud Density  
-Assessing the number of inlier matches produced by different feature matchers (with a unified feature extractor). This is crucial since it affects the density of the point cloud generated after the triangulation stage occurs.
+- **Inlier Matches & Point Cloud Density**: Assessing the number of inlier matches produced by different feature matchers (with a unified feature extractor). This is crucial since it affects the density of the point cloud generated after the triangulation stage occurs.
 
-- ### Pose Accuracy
-Comparing the estimated camera extrinsic parameters (*rotation* and *translation*) with the ground truth for specific viewpoints using advnaced metrics: ***fundamental and Essential matrices***. These, particularly, assist with quantifying the spatial & localization accuracy across each extractor–matcher combination.  
+- **Pose Accuracy**: Comparing the estimated camera extrinsic parameters (*rotation* and *translation*) with the ground truth for specific viewpoints using advnaced metrics: ***fundamental and Essential matrices***. These, particularly, assist with quantifying the spatial & localization accuracy across each extractor–matcher combination.  
 
 This methodology provides a **consistent and reliable framework for benchmarking**, ensuring a fair comparison of different approaches and guiding the selection of the **optimal pipeline configuration**. Ultimately, this leads to generating a **well-representative rendered mesh** through the **multi-view stereo (MVS) reconstruction pipeline**.  
 
@@ -69,3 +66,13 @@ the performance of the proposed **System State-Space Identification** method—u
   publisher = {GitHub},
   url       = {https://github.com/B-A-IntelliBots/3D-Reconstruction}
 }
+```
+
+## 🙏 Acknowledgments  
+
+This project builds upon several excellent open-source contributions:
+
+- [Hierarchical-Localization](https://github.com/cvg/Hierarchical-Localization) is used as the foundation for implementing the 3D reconstruction pipeline.  
+- [Google Colab Hierarchical-Localization](https://colab.research.google.com/drive/1MrVs9b8aQYODtOGkoaGNF9Nji3sbCNMQ) is utilized to generate the final 3D point cloud model and to extract the coordinates of the **extracted keypoints and their matches**, which were further evaluated using custom Python evaluation scripts.  
+- [OpenMVS](https://github.com/cdcseacave/openMVS) is employed to interpolate the resulting point cloud into 3D meshes.  
+- [COLMAP](https://github.com/colmap/colmap) is used to undistort the resulted 3D point cloud prior to mesh reconstruction, enabling the creation of the final **rendered-mesh product** that visually represents the virtual environment.  
