@@ -29,3 +29,43 @@ Assessing the number of inlier matches produced by different feature matchers (w
 Comparing the estimated camera extrinsic parameters (*rotation* and *translation*) with the ground truth for specific viewpoints using advnaced metrics: ***fundamental and Essential matrices***. These, particularly, assist with quantifying the spatial & localization accuracy across each extractor–matcher combination.  
 
 This methodology provides a **consistent and reliable framework for benchmarking**, ensuring a fair comparison of different approaches and guiding the selection of the **optimal pipeline configuration**. Ultimately, this leads to generating a **well-representative rendered mesh** through the **multi-view stereo (MVS) reconstruction pipeline**.  
+
+---
+
+## 🚀 Quick Start
+### Prerequisites
+- OS/Tooling: `Python ≥3.10`
+### Installation
+
++ #### Clone the repository:
+  `$ git clone https://github.com/B-A-IntelliBots/3D-Reconstruction.git 3d-Rec`
+  
+---
+
+## 📊 Results & Benchmarks
+the performance of the proposed **System State-Space Identification** method—using MATLAB’s *System Identification Toolbox* in combination with a Genetic Algorithm (GA)—is validated according to the following criteria:
+
+#### 🔹 1. Loss / Error Metrics
+
+#### 🔹 2. Computational Performance
+
+---
+
+## 📁Project Structure
+├── [src](https://github.com/B-A-IntelliBots/3D-Reconstruction/tree/main/src)/  # Core codes <br>
+├── [data](https://github.com/B-A-IntelliBots/3D-Reconstruction/tree/main/data)/ # Sample datasets <br>
+├── [results](https://github.com/B-A-IntelliBots/3D-Reconstruction/tree/main/results)/    # Plots and evaluation metrics <br>
+├── README.md   # This file <br>
+
+---
+
+## 📖 Citation
+
+```bibtex
+@software{myproject2025,
+  author    = {Ali Deeb, Bisher Alsaleh}, Supervised by: {Prof. Iyad Hatem}
+  title     = {3D-Reconstruction},
+  year      = {2025},
+  publisher = {GitHub},
+  url       = {https://github.com/B-A-IntelliBots/3D-Reconstruction}
+}
