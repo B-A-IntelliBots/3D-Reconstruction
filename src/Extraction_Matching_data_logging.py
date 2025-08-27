@@ -3,7 +3,7 @@
 # we need to find its corresponding keypoint in each database image
 # that observes it. We also count the number of inliers in each.
 import numpy as np
-inliers = np.array(log["PnP_ret"]["inliers"])
+inliers = np.array(log["PnP_ret"]["inlier_mask"])
 mkp_q = log["keypoints_query"]
 n = len(log["db"])
 kp_idxs, kp_to_3D_to_db = log["keypoint_index_to_db"]
