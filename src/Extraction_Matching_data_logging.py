@@ -19,7 +19,7 @@ for i, (inl, (p3D_id, db_idxs)) in enumerate(zip(inliers, kp_to_3D_to_db)):
     dbs_kp_q_db[db_idx].append((i, kp_db))
     inliers_dbs[db_idx].append(inl)
 db_sort = np.argsort(-counts)
-for db_idx in db_sort[:2]:
+for db_idx in db_sort[:2]: # db_sort[:x], x here is the top xth db_idx with the highest num. of matches
    db = model.images[log["db"][db_idx]]
    db_name = db.name
    db_kp_q_db = np.array(dbs_kp_q_db[db_idx])
@@ -28,7 +28,7 @@ for db_idx in db_sort[:2]:
    inliers_db = inliers_dbs[db_idx]
 dim=np.shape(kp_q)
 print(np.shape(kp_q))
-file= open("/content/Hierarchical-Localization/datasets/sacre_coeur/kp_q.txt","w+")
+file= open("/content/Hierarchical-Localization/datasets/sacre_coeur/kp_q.txt","w+") #rename kp_q.txt with kp_q_queryIDX_dbIDX_ExtractorMatcher.txt
 for i in range(dim[0]):
   a=kp_q[i,0]
   b=kp_q[i,1]
@@ -37,7 +37,7 @@ for i in range(dim[0]):
   file.write(str(b))
   file.write("\n")
 file.close()
-file= open("/content/Hierarchical-Localization/datasets/sacre_coeur/kp_db.txt","w+")
+file= open("/content/Hierarchical-Localization/datasets/sacre_coeur/kp_db.txt","w+") #rename kp_db.txt with kp_db_dbIDX_qIDX_ExtractorMatcher.txt
 for i in range(dim[0]):
   a=kp_db[i,0]
   b=kp_db[i,1]
