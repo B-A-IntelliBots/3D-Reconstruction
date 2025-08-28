@@ -16,7 +16,10 @@ The demo illustrates how to integrate `Extraction_Matching_data_logging.py` into
 
 ---
 ### 2. Camera Pose Estimation
-The script **`Camera_pose_estimation.py`** is designed to compare estimated camera extrinsic parameters (rotation and translation) against ground truth for selected viewpoints. It leverages advanced multiple-view-geometry metrics, including the **Fundamental** and **Essential** matrices.  
+The script **`Camera_pose_estimation.py`** is designed to compare estimated camera extrinsic parameters (rotation and translation) against ground truth for selected viewpoints. It leverages advanced multiple-view-geometry metrics, including the **Fundamental** and **Essential** matrices.
+<div align="center">
+<img width="544" height="390" alt="Rlative Rotation and Translation" src="https://github.com/user-attachments/assets/464bea15-1e91-4521-ac76-f06599d002db" />
+</div>
 
 #### Key Functions
 - Utilizes **`gt.py`** to extract ground-truth parameters (R, T) from the **`.h5`** file format.  
