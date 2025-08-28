@@ -23,5 +23,5 @@ The script **`Camera_pose_estimation.py`** is designed to compare estimated came
 - Imports feature extraction and matching results with the following specifications:  
   - **`kp_q_queryID_databaseID_disk.txt`** → keypoints from a query image and their corresponding matches in a database image.  
   - **`kp_db_databaseID_queryID_disk.txt`** → the inverse keypoint matches.
-  - Computes the **rotation error** between the estimated and ground-truth rotations.  
-  - Computes the **translation angle error**, since the Essential matrix only provides the translation vector up to scale (making the exact relative translation magnitude unattainable).   
+- Computes the **rotation error** between the estimated and ground-truth rotations.  
+- Computes the **translation angle error**, since the Essential matrix only provides the translation vector up to scale (making the exact relative translation magnitude unattainable).   
