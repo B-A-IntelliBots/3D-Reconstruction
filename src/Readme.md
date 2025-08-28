@@ -21,7 +21,8 @@ The script **`Camera_pose_estimation.py`** is designed to compare estimated came
 #### Key Functions
 - Utilizes **`gt.py`** to extract ground-truth parameters (R, T) from the **`.h5`** file format.  
 - Imports feature extraction and matching results with the following specifications:  
-  - **`kp_q_queryID_databaseID_disk.txt`** → keypoints from a query image and their corresponding matches in a database image.  
-  - **`kp_db_databaseID_queryID_disk.txt`** → the inverse keypoint matches.
+  - **`kp_q_queryID_databaseID_(Extractor+Matcher combination).txt`** → keypoints from a query image and their corresponding matches in a database image.  
+  - **`kp_db_databaseID_queryID_(Extractor+Matcher combination).txt`** → the inverse keypoint matches.
+  - **(Extractor+Matcher combination)**: the type of Feature Extractor-Matcher {**sl**: SuperPoint+LightGlue, **sift**: Sift+NN_ratio, **ss**:SuperPoint+SuperGlue, **disk**: Disk+LightGlue}
 - Computes the **rotation error** between the estimated and ground-truth rotations.  
-- Computes the **translation angle error**, since the Essential matrix only provides the translation vector up to scale (making the exact relative translation magnitude unattainable).   
+- Computes the **translational direction error**, since the Essential matrix only provides the translation vector up to scale (making the exact relative translation magnitude unattainable).   
