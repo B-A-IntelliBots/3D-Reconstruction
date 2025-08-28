@@ -23,6 +23,6 @@ The script **`Camera_pose_estimation.py`** is designed to compare estimated came
 - Imports feature extraction and matching results with the following specifications:  
   - **`kp_q_queryID_databaseID_(Extractor+Matcher combination).txt`** → keypoints from a query image and their corresponding matches in a database image.  
   - **`kp_db_databaseID_queryID_(Extractor+Matcher combination).txt`** → the inverse keypoint matches.
-  - **(Extractor+Matcher combination)**: the type of Feature Extractor-Matcher {**sl**: SuperPoint+LightGlue, **sift**: Sift+NN_ratio, **ss**:SuperPoint+SuperGlue, **disk**: Disk+LightGlue}
+  - **(Extractor+Matcher combination)**: the type of Feature Extractor-Matcher {**`sl`**: SuperPoint+LightGlue, **`sift`**: Sift+NN_ratio, **`ss`**:SuperPoint+SuperGlue, **`disk`**: Disk+LightGlue}
 - Computes the **rotation error** between the estimated and ground-truth rotations.  
 - Computes the **translational direction error**, since the Essential matrix only provides the translation vector up to scale (making the exact relative translation magnitude unattainable).   
