@@ -1,6 +1,8 @@
 ## Usage Guide
 
-The script **`Extraction_Matching_data_logging.py`** is designed to log matching data between each query image and the captured database images. This process supports a deeper evaluation of different feature extraction and matching pipelines.
+### 1. Feature Matching Data Logging
+
+The script **`Extraction_Matching_data_logging.py`** is designed to log Feature-matched data between each query image and the captured database images. This process supports a deeper evaluation of different feature extraction and matching pipelines.
 
 ### What the script does:
 - Logs the number of keypoints extracted from different feature extractors.
@@ -13,3 +15,13 @@ To understand how this script is used in practice, you can follow the provided G
 The demo illustrates how to integrate `Extraction_Matching_data_logging.py` into the sourced [Hierarchical Localization (HLOC)](https://colab.research.google.com/drive/1MrVs9b8aQYODtOGkoaGNF9Nji3sbCNMQ) Google Colab environment by inserting the script into the workflow.
 
 ---
+### 2. Camera Pose Estimation
+The script **`Camera_pose_estimation.py`** is designed to compare estimated camera extrinsic parameters (rotation and translation) against ground truth for selected viewpoints. It leverages advanced multiple-view-geometry metrics, including the **Fundamental** and **Essential** matrices.  
+
+#### Key Functions
+- Utilizes **`gt.py`** to extract ground-truth parameters (R, T) from the **`.h5`** file format.  
+- Imports feature extraction and matching results with the following specifications:  
+  - **`kp_q_queryID_databaseID_disk.txt`** → keypoints from a query image and their corresponding matches in a database image.  
+  - **`kp_db_databaseID_queryID_disk.txt`** → the inverse keypoint matches.
+  - Computes the **rotation error** between the estimated and ground-truth rotations.  
+  - Computes the **translation angle error**, since the Essential matrix only provides the translation vector up to scale (making the exact relative translation magnitude unattainable).   
