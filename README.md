@@ -39,12 +39,13 @@ This methodology provides a **consistent and reliable framework for benchmarking
   
 ---
 
-## 📊 Results & Benchmarks
-the performance of the proposed **System State-Space Identification** method—using MATLAB’s *System Identification Toolbox* in combination with a Genetic Algorithm (GA)—is validated according to the following criteria:
+## 📊 Results & Benchmarks  
 
-#### 🔹 1. Loss / Error Metrics
+- 🔑 **Extractor:** **DISK** consistently yields the highest number of keypoints across all datasets.  
+- 🤝 **Matcher:** **LightGlue** outperforms NN-ratio and matches SuperGlue, while being even more computationally efficient.  
+- 🎯 **Pose Estimation:** **Disk+LightGlue** delivers the best balance of rotation accuracy, translation robustness, and triangulated keypoints.  
 
-#### 🔹 2. Computational Performance
+🏆 **Optimal Pipeline → `DISK + LightGlue`**  
 
 ---
 
