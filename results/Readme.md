@@ -75,7 +75,7 @@ For each dataset, two bar charts were generated:
 
 - **Abraham Lincoln Memorial (Fig. 4):**  
   - NN-ratio shows the weakest, sparsest performance.  
-  - SuperGlue and LightGlue provide stable, consistent results across image pairs.  
+  - SuperGlue and LightGlue provide stable, consistent and the highest number of matches across image pairs.  
   - Inlier-to-total match ratios are acceptable for all algorithms.  
 - **Tree dataset (Fig. 5):**  
   - NN-ratio improves due to rich textures, yielding more matches.  
