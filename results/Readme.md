@@ -67,7 +67,7 @@ For each dataset, two bar charts were generated:
 
 <img width="600" height="275" alt="image" src="https://github.com/user-attachments/assets/f2832b7e-f19d-48a2-99e1-acd0e1c6738d" />
 
-*Figure 5: Number of total&inlier matches of “Sagrada Familia” .*
+*Figure 6: Number of total&inlier matches of “Sagrada Familia” .*
 
 </div>
 
@@ -87,3 +87,34 @@ For each dataset, two bar charts were generated:
 
 **Conclusion:**  
 SuperGlue and LightGlue consistently outperform NN-ratio. Considering computational efficiency, **LightGlue** is selected as the preferred matcher.
+
+---
+
+## Pose Estimation Error Metric  
+
+To assess the accuracy of candidate combinations (e.g., **DISK+LightGlue**) in 3D reconstruction, we evaluate pose estimation quality using the **fundamental matrix**. This matrix encodes the relative **rotation** and **translation** between two cameras from matched keypoints.  
+
+From the estimated fundamental matrix, we extract the rotation matrix and translation vector, which are then compared to ground truth data from the **Image Matching Challenge 2021**. The evaluation consists of two error types:  
+
+- **Rotation Error**: Euler angles (Roll, Pitch, Yaw) from the estimated rotation are compared with ground truth using **Mean Squared Error**.  
+- **Translation Error**: Since translation from the fundamental matrix is scale-ambiguous, the **angle between the estimated and normalized ground truth vectors** is used.
+
+This metric is applied on every pair of the dataset (**Abraham Lincoln Memorial**, **Tree dataset**, **Sagrada Familia**) consistently across all combinations (SIFT+NN-ratio, SuperPoint+SuperGlue, SuperPoint+LightGlue) for a fair performance comparison.  
+<div align="center">
+<img width="600" height="257" alt="image" src="https://github.com/user-attachments/assets/c9ee9dc9-4a37-4ce8-b979-5a89b203b61b" />
+  
+*Figure 7: Rotation Euler Error for all image pairs.*
+
+<img width="600" height="257" alt="image" src="https://github.com/user-attachments/assets/bbf276cf-de0c-482d-9f52-55ddfa8ddab3" />
+
+*Figure 8: Translation vector angle Errors for all image pairs.*
+</div>
+
+To compare combinations fairly, a **harmonic mean** is employed, as it reduces the influence of outlier errors compared to the arithmetic mean.  
+
+<p align="center" style="font-family: 'Cambria Math', 'STIXGeneral', 'Times New Roman', serif; font-size: 16px;">
+HM = n / ( &Sigma;<sub>i=1</sub><sup>n</sup> (1 / x<sub>i</sub>) )
+</p>
+
+The table below reports the harmonic mean of rotation and translation errors for each combination across all pairs
+  
