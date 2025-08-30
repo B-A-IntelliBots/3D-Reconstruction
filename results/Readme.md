@@ -85,12 +85,12 @@ For each dataset, two bar charts were generated:
   - All algorithms show similar trends.  
   - Inlier ratios converge to 1, likely due to the dataset’s environmental characteristics.
 
-**Conclusion:**  
+**Summary:**  
 SuperGlue and LightGlue consistently outperform NN-ratio. Considering computational efficiency, **LightGlue** is selected as the preferred matcher.
 
 ---
 
-## Pose Estimation Error Metric  
+## 4. Pose Estimation Error Metric  
 
 To assess the accuracy of candidate combinations (e.g., **DISK+LightGlue**) in 3D reconstruction, we evaluate pose estimation quality using the **fundamental matrix**. This matrix encodes the relative **rotation** and **translation** between two cameras from matched keypoints.  
 
@@ -117,4 +117,10 @@ HM = n / ( &Sigma;<sub>i=1</sub><sup>n</sup> (1 / x<sub>i</sub>) )
 </p>
 
 The table below reports the harmonic mean of rotation and translation errors for each combination across all pairs
-  
+<div align="center">
+<img width="600" height="150" alt="image" src="https://github.com/user-attachments/assets/2e86d7fe-4716-47ce-b510-fddf1ccd7bab" />
+</div>
+
+## Conclusion: the Optimal Combination  
+
+According to the preceding Table, **Disk+LightGlue** achieves the lowest harmonic mean in rotation error, followed by **SuperPoint+LightGlue**. For translation error, **SuperPoint+LightGlue** performs best, with Disk+LightGlue close behind. Despite this, Disk+LightGlue excels in both rotation accuracy and the number of triangulated keypoints, making it the **optimal choice for 3D reconstruction**.  
