@@ -124,3 +124,6 @@ The table below reports the harmonic mean of rotation and translation errors for
 ## Conclusion: the Optimal Combination  
 
 According to the preceding Table, **Disk+LightGlue** achieves the lowest harmonic mean in rotation error, followed by **SuperPoint+LightGlue**. For translation error, **SuperPoint+LightGlue** performs best, with Disk+LightGlue close behind. Despite this, Disk+LightGlue excels in both rotation accuracy and the number of triangulated keypoints, making it the **optimal choice for 3D reconstruction**.  
+<div align="center">
+<img width="829" height="695" alt="image" src="https://github.com/user-attachments/assets/a8a8fc48-e780-431c-8ff0-83b2a53e9c7e" />
+</div>
