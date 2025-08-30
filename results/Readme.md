@@ -42,3 +42,48 @@ The bar charts in Figs. (1,2,3) show the number of extracted keypoints (Y-axis) 
 
 **Summary:**  
 DISK consistently outperforms other extractors across all environments. SIFT is highly dependent on texture richness, while SuperPoint remains stable but below DISK.  
+
+---
+
+## 2. Matcher Algorithms – Inlier/Total Matches Analysis  
+
+After keypoint extraction, matching algorithms identify correspondences between image pairs.  
+- A higher **total match count** generally yields denser 3D reconstructions.  
+- The **inlier/total match ratio** reflects accuracy, as inliers (validated by RANSAC) ensure consistent camera parameters and better 3D localization.  
+
+We evaluated **three matchers** — **SuperGlue, LightGlue, and NN-ratio test** — using the same extractor (**SuperPoint**).  
+
+For each dataset, two bar charts were generated:  
+- **Left chart:** total matches per image pair  
+- **Right chart:** inlier matches per image pair
+<div align="center">
+<img width="600" height="275" alt="image" src="https://github.com/user-attachments/assets/5c3a4715-f2b4-42e3-907a-a8f985f806c4" />
+  
+*Figure 4: Number of total&inlier matches of “the Abraham Lincoln memorial statue”.*
+
+<img width="600" height="275" alt="image" src="https://github.com/user-attachments/assets/355a56de-4088-408d-b076-7a3de34c9030" />
+
+*Figure 5: Number of total&inlier matches of “tree”.*
+
+<img width="600" height="275" alt="image" src="https://github.com/user-attachments/assets/f2832b7e-f19d-48a2-99e1-acd0e1c6738d" />
+
+*Figure 5: Number of total&inlier matches of “Sagrada Familia” .*
+
+</div>
+
+## Matcher Performance Analysis  
+
+- **Abraham Lincoln Memorial (Fig. 4):**  
+  - NN-ratio shows the weakest, sparsest performance.  
+  - SuperGlue and LightGlue provide stable, consistent results across image pairs.  
+  - Inlier-to-total match ratios are acceptable for all algorithms.  
+- **Tree dataset (Fig. 5):**  
+  - NN-ratio improves due to rich textures, yielding more matches.  
+  - SuperGlue and LightGlue consistently extract ~500 matches.  
+  - LightGlue slightly outperforms SuperGlue in memory and computation.  
+- **Sagrada Familia (Fig. 6):**  
+  - All algorithms show similar trends.  
+  - Inlier ratios converge to 1, likely due to the dataset’s environmental characteristics.
+
+**Conclusion:**  
+SuperGlue and LightGlue consistently outperform NN-ratio. Considering computational efficiency, **LightGlue** is selected as the preferred matcher.
