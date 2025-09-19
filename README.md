@@ -4,6 +4,7 @@
 
 An end-to-end 3D reconstruction benchmark to identify the most effective combination of (feature extractor, feature matcher) in hierarchical localization pipelines using rigorous quantitative mathematical metrics.
 
+![](https://img.shields.io/badge/License-Apache%202.0-blue?style=plastic&link=https%3A%2F%2Fopensource.org%2Flicense%2Fapache-2-0)
 ![](https://img.shields.io/badge/v3.11-green?style=plastic&logo=python&label=Python3&labelColor=black&color=green)
 </div>
 <div align="center">
